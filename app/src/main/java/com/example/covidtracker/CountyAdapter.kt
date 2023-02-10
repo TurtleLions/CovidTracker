@@ -77,6 +77,13 @@ class CountyAdapter(var dataSet: List<CountyData>) : RecyclerView.Adapter<County
                 viewHolder.textViewCounty.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_high_24,0,0,0)
             }
         }
+        viewHolder.layout.setOnClickListener{
+            val detailActivity = Intent(it.context, CountyDetailActivity::class.java).apply {
+                putExtra(EXTRA_COUNTY, dataSet[position])
+            }
+            it.context.startActivity(detailActivity)
+
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)
