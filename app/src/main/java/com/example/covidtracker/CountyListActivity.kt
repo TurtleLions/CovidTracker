@@ -4,6 +4,9 @@ import android.net.wifi.rtt.CivicLocationKeys.STATE
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.covidtracker.databinding.ActivityCountyListBinding
 import com.example.covidtracker.CountyAdapter
@@ -51,5 +54,30 @@ class CountyListActivity : AppCompatActivity() {
             }
         })
     }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.county_list_menu, menu)
 
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.menu_Transmission -> {
+                adapter.dataSet = adapter.dataSet.sortedByDescending {
+                    it.cdcTransmissionLevel
+                }
+                adapter.notifyDataSetChanged()
+                true
+            }
+            R.id.menu_countryName -> {
+                adapter.dataSet = adapter.dataSet.sortedBy{
+                    it.county
+                }
+                adapter.notifyDataSetChanged()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_Transmission"
+        android:title="@string/sort_by_transmission_level"
+        app:showAsAction="never"
+        />
+    <item android:id="@+id/menu_countryName"
+        android:title="@string/sort_by_county_name"
+        app:showAsAction="never"
+        />
+    <item android:id="@+id/menu_info"
+        android:title="@string/info"
+        android:icon="@drawable/ic_more_info_24"
+        app:showAsAction="ifRoom"
+        />
+</menu>

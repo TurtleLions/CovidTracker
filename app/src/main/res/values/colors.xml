@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name = "low_transmission">#FF288DFC</color>
+    <color name = "moderate_transmission">#FFFFF539</color>
+    <color name = "substantial_transmission">#FFFD723F</color>
+    <color name = "high_transmission">#FFFC0D1B</color>
 </resources>
